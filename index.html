@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>This Is Why We Can't Have Nice Things — mBOLDen Change</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://this-is-why.netlify.app/">
+<meta property="og:title" content="This Is Why We Can't Have Nice Things">
+<meta property="og:description" content="Follow the money. See what Congress funded — and what they cut. A 5-minute read from mBOLDen Change.">
+<meta property="og:image" content="https://this-is-why.netlify.app/og-share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="This Is Why We Can't Have Nice Things">
+<meta name="twitter:description" content="Follow the money. See what Congress funded — and what they cut.">
+<meta name="twitter:image" content="https://this-is-why.netlify.app/og-share-card.png">
+
+<meta name="description" content="The One Big Beautiful Bill funds tax cuts for the ultra-wealthy while gutting healthcare, housing, food assistance, and education. See what it costs your family.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- STICKY PRICE TICKER -->
+<div class="sticky-ticker" id="sticky-ticker">
+  <div class="sticky-ticker-brand"><a href="https://www.mboldenchange.org/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">mBOLDen Change</a></div>
+  <div class="sticky-ticker-scroll">
+    <div class="sticky-ticker-track">
+      <span class="price-ticker-item"><span class="price-ticker-price">$4.10</span><span class="price-ticker-label">gallon of milk</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$350/mo</span><span class="price-ticker-label">insulin (commercial copay)</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$2,022</span><span class="price-ticker-label">avg monthly rent</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$1,094/mo</span><span class="price-ticker-label">childcare per child</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$27,000/yr</span><span class="price-ticker-label">family health premium</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$422,000</span><span class="price-ticker-label">median home price</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$39,500</span><span class="price-ticker-label">avg student debt</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$6,000</span><span class="price-ticker-label">insurance deductible</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">+$2,600/yr</span><span class="price-ticker-label">peak tariff cost per household</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$170/yr</span><span class="price-ticker-label">added energy costs</span></span>
+      <span class="price-ticker-dot"></span>
+      <!-- duplicate for seamless loop -->
+      <span class="price-ticker-item"><span class="price-ticker-price">$4.10</span><span class="price-ticker-label">gallon of milk</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$350/mo</span><span class="price-ticker-label">insulin (commercial copay)</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$2,022</span><span class="price-ticker-label">avg monthly rent</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$1,094/mo</span><span class="price-ticker-label">childcare per child</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$27,000/yr</span><span class="price-ticker-label">family health premium</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$422,000</span><span class="price-ticker-label">median home price</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$39,500</span><span class="price-ticker-label">avg student debt</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$6,000</span><span class="price-ticker-label">insurance deductible</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">+$2,600/yr</span><span class="price-ticker-label">peak tariff cost per household</span></span>
+      <span class="price-ticker-dot"></span>
+      <span class="price-ticker-item"><span class="price-ticker-price">$170/yr</span><span class="price-ticker-label">added energy costs</span></span>
+      <span class="price-ticker-dot"></span>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 1: THE HOOK -->
+<section class="hook" id="hook">
+  <div class="hook-logo">
+    <a href="https://www.mboldenchange.org/" target="_blank" rel="noopener"><img src="assets/logo.png" alt="mBOLDen Change"></a>
+  </div>
+  <h1 class="hook-title">This Is Why We<br>Can't Have <em>Nice Things</em></h1>
+  <div class="hook-scroll" onclick="document.getElementById('receipt-section').scrollIntoView({behavior:'smooth'})">
+    <span>Follow the money</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+
+<!-- SECTION 2: THE RECEIPT -->
+<section class="receipt-section" id="receipt-section">
+
+  <div class="receipt-intro reveal">
+    <h2><em>"Show me your budget and I'll show you your values."</em></h2>
+    <p>In 2025, the Trump Administration and a GOP-led Congress passed the One Big Beautiful Bill.<br>Here's what they funded — and what they cut.</p>
+    <p style="font-size:11px; color:#bbb; margin-top:12px; letter-spacing:0.1em; font-weight:300;">5-MINUTE READ</p>
+  </div>
+
+  <div class="receipt-container" id="receipt-container">
+
+    <!-- LEFT: WHAT THEY FUNDED -->
+    <div class="receipt receipt-left">
+      <div class="receipt-header">
+        <span class="arrow-icon">↑</span> Funded &amp; Protected
+      </div>
+
+      <div class="receipt-item" data-delay="0">
+        <div class="receipt-item-label">Department of Defense</div>
+        <div class="receipt-item-program">Pentagon Budget</div>
+        <div class="receipt-item-amount">$849.8B</div>
+        <div class="receipt-item-period">FY2025 requested · fully protected</div>
+        <div class="receipt-item-human">That's <strong>$26,902 per second</strong>, every second. Untouched.</div>
+      </div>
+
+      <div class="receipt-item" data-delay="400">
+        <div class="receipt-item-label">Immigration Enforcement</div>
+        <div class="receipt-item-program">ICE Operations</div>
+        <div class="receipt-item-amount">$9.3B</div>
+        <div class="receipt-item-period">FY2025 base · supplemental pushed total past $14B</div>
+        <div class="receipt-item-human"><strong>$295 per second</strong> on deportation and detention.</div>
+      </div>
+
+      <div class="receipt-item" data-delay="800">
+        <div class="receipt-item-label">Estate &amp; Corporate Tax</div>
+        <div class="receipt-item-program">2017 Tax Cuts Made Permanent</div>
+        <div class="receipt-item-amount">$15M</div>
+        <div class="receipt-item-period">estate tax exemption per person · $30M per couple</div>
+        <div class="receipt-item-human">Estates below that threshold pay <strong>nothing</strong>. The cost is on the other side of this receipt.</div>
+      </div>
+
+      <div class="receipt-item" data-delay="1000">
+        <div class="receipt-item-label">Tax Provisions</div>
+        <div class="receipt-item-program">Tax Code Changes</div>
+        <div class="receipt-item-amount">+2.7%</div>
+        <div class="receipt-item-period">Income gain for top 10% by 2034 · CBO</div>
+        <div class="receipt-item-human">The bill's tax provisions deliver the largest gains to the highest earners. That's not a side effect — it's the <strong>architecture</strong>.</div>
+      </div>
+
+      <div class="receipt-total">
+        <div class="receipt-total-label">Protected Total</div>
+        <div class="receipt-total-amount" id="total-funded">$859.1B/yr</div>
+      </div>
+      <div class="receipt-footer">07/04/2025  14:32:07  TRANS #OBBBA-2025</div>
+    </div>
+
+    <!-- CENTER DIVIDER -->
+    <div class="receipt-divider">
+      <div class="receipt-vs">VS</div>
+    </div>
+
+    <!-- RIGHT: WHAT THEY CUT -->
+    <div class="receipt receipt-right">
+      <div class="receipt-header">
+        Cut &amp; Defunded <span class="arrow-icon">↓</span>
+      </div>
+
+      <div class="receipt-item" data-delay="200">
+        <div class="receipt-item-label">Health Coverage</div>
+        <div class="receipt-item-program">Medicaid</div>
+        <div class="receipt-item-amount">−$990B</div>
+        <div class="receipt-item-period">over 10 years · CBO scored</div>
+        <div class="receipt-item-human"><strong>15 million</strong> Americans lose health coverage. That's more people than live in Pennsylvania.</div>
+      </div>
+
+      <div class="receipt-item" data-delay="600">
+        <div class="receipt-item-label">Food Assistance</div>
+        <div class="receipt-item-program">SNAP Benefits</div>
+        <div class="receipt-item-amount">−$295B</div>
+        <div class="receipt-item-period">over 10 years · CBO scored</div>
+        <div class="receipt-item-human"><strong>3.2 million</strong> lose food assistance each month. A million of them are over 55.</div>
+      </div>
+
+      <div class="receipt-item" data-delay="1000">
+        <div class="receipt-item-label">ACA Premium Support</div>
+        <div class="receipt-item-program">Enhanced Tax Credits</div>
+        <div class="receipt-item-amount">Expired</div>
+        <div class="receipt-item-period">end of 2025 · Congress failed to renew</div>
+        <div class="receipt-item-human">A family of four earning $60K could see premiums jump from <strong>$400 to $2,400/month</strong>.</div>
+      </div>
+
+      <div class="receipt-item" data-delay="1200">
+        <div class="receipt-item-label">Who Pays</div>
+        <div class="receipt-item-program">Bottom 10% of Earners</div>
+        <div class="receipt-item-amount">−3.1%</div>
+        <div class="receipt-item-period">income change by 2034 · CBO</div>
+        <div class="receipt-item-human">The people who can least afford it <strong>lose the most</strong>.</div>
+      </div>
+
+      <div class="receipt-total">
+        <div class="receipt-total-label">Cut Total (10yr)</div>
+        <div class="receipt-total-amount" id="total-cut">−$1.28 Trillion</div>
+      </div>
+      <div class="receipt-footer">07/04/2025  14:32:07  TRANS #OBBBA-2025</div>
+    </div>
+
+  </div>
+
+  <!-- Tariff addendum — full width, below both receipts -->
+  <div class="reveal" style="max-width:1000px; margin:32px auto 0; background:#faf6ee; border-top:2px dashed rgba(0,0,0,0.18); padding:28px 32px; position:relative; text-align:center;
+    background-image: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.008) 2px,rgba(0,0,0,0.008) 3px); box-shadow:2px 4px 20px rgba(0,0,0,0.10);">
+    <div style="font-family:'Archivo Narrow',sans-serif; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; font-weight:700; color:var(--red); margin-bottom:8px;">PLUS — Off the Books</div>
+    <div style="font-family:'Archivo Narrow',sans-serif; font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; color:var(--text); margin-bottom:10px;">Tariff-Driven Price Increases</div>
+    <div style="font-family:'Archivo Narrow',sans-serif; font-size:clamp(32px,4vw,48px); font-weight:700; color:var(--red); line-height:1; margin-bottom:6px;">+$2,600/yr</div>
+    <div style="font-size:11px; color:var(--muted); margin-bottom:12px;">per household · Yale Budget Lab peak estimate</div>
+    <div style="font-size:13px; color:#555; font-weight:400; line-height:1.5; max-width:640px; margin:0 auto;">Not in the Bill. Still on your tab.</div>
+  </div>
+
+</section>
+
+
+<!-- FULL-BLEED IMAGE (parallax) -->
+<div class="fullbleed-image fullbleed-parallax" id="fullbleed-parallax" style="background-image:url('assets/shopper.jpeg');">
+  <div class="fullbleed-image-content">
+    <blockquote>Every family has a number.<br>The one that keeps them up at night.</blockquote>
+  </div>
+  <span class="fullbleed-image-credit">Photo by Eleganza</span>
+</div>
+
+<!-- STAT BREAK: INSURANCE (moved before carousel) -->
+<section class="stat-break stat-break-dark reveal">
+  <div class="stat-break-number" style="color:var(--teal);">$27,000</div>
+  <div class="stat-break-context">That's what "good" insurance costs a family of four per year. Before the $6,000 deductible. Before the $350/month insulin.</div>
+  <div class="stat-break-character">— David has "good" insurance through his employer in Sunnyvale.</div>
+</section>
+
+
+<!-- SECTION 4: HORIZONTAL CAROUSEL -->
+<section class="carousel-section" id="carousel-section">
+  <div class="carousel-header reveal">
+    <div class="chapter-tag">The Price Tag Everyone's Paying</div>
+    <h2>Same Squeeze.<br><span class="almost">Almost</span> Every Bracket.</h2>
+  </div>
+
+  <div class="carousel-track-wrapper">
+    <div class="carousel-track" id="carousel-track">
+
+      <!-- HEALTHCARE -->
+      <div class="carousel-card" role="button" tabindex="0" data-topic="healthcare">
+        <div class="card-preview">
+          <div class="card-domain">Healthcare</div>
+          <div class="card-context">Cut from Medicaid over 10 years</div>
+          <div class="card-stat">$990B</div>
+          <div class="card-hook">A nurse in Ohio watched her hospital close. A dad in San Jose pays $27K for insurance and still spends $350/month on his daughter's insulin. Same system. Same monopoly.</div>
+          <div class="card-expand-hint"><span class="plus">+</span> Read more</div>
+        </div>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="card-detail-narrative">
+              <p>Maria is a home health aide in rural Tennessee. The hospital 20 minutes from her house closed last year — there wasn't enough Medicaid revenue to keep it open. Now the nearest ER is 45 minutes away. Her neighbor had a stroke last month. The ambulance ride alone cost more than a month's rent.</p>
+              <p>David is a software architect in Sunnyvale. His family premium is <strong>$27,000 a year</strong> — and his deductible is another $6,000 before insurance pays a dime. He has "good" insurance. His daughter's insulin still costs <strong>$350 a month</strong>.</p>
+              <p>They live different lives. But the same consolidated hospital system sets both their prices. The Bill cut <strong>$990 billion</strong> from Medicaid over ten years. When rural hospitals close, the nearest hospital raises prices by 3.6% — because there's no competition left. That cost shift lands on every employer plan.</p>
+            </div>
+            <div class="card-detail-stats">
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">15M</span>
+                <span class="card-mini-stat-label">Americans projected to lose health coverage</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">$26,993</span>
+                <span class="card-mini-stat-label">Average family health insurance premium, 2025</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">100M</span>
+                <span class="card-mini-stat-label">Americans carrying $220B+ in medical debt — #1 cause of bankruptcy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOD -->
+      <div class="carousel-card" role="button" tabindex="0" data-topic="food">
+        <div class="card-preview">
+          <div class="card-domain">Food</div>
+          <div class="card-context">Cut from SNAP over 10 years</div>
+          <div class="card-stat">$295B</div>
+          <div class="card-hook">Your grocery bill went up $80 a month. Prices are up 24% since 2020. The companies setting them posted record profits. Congress cut the only program pushing back.</div>
+          <div class="card-expand-hint"><span class="plus">+</span> Read more</div>
+        </div>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="card-detail-narrative">
+              <p>You used to spend $150 a week on groceries. Now it's $190 for the same cart. You make adjustments — store brand, fewer organic options, skipping the good olive oil. You can absorb it. It's annoying, not catastrophic.</p>
+              <p>For Linda, 62, in Akron, that same price increase means choosing between her blood pressure medication and a full week of meals. She's one of <strong>3.2 million people</strong> who just lost SNAP benefits. She spent 35 years as a school bus driver. She's not lazy. She's caught in an economy where a handful of corporations dominate every aisle — four companies control <strong>85% of beef processing</strong> alone — and the biggest food conglomerates posted <strong>record profits in 2022 and 2023</strong> while raising prices on everyone — and margins remain elevated.</p>
+              <p>Grocery prices are up <strong>23.6%</strong> since 2020. Corporate margins in food processing hit historic highs. Congress cut <strong>$295 billion</strong> from SNAP — the only counterweight families had against prices they can't negotiate.</p>
+              <p>And now the price tag isn't even fixed. Instacart is under FTC investigation for charging different customers different prices for the same gallon of milk — <strong>up to 23% more</strong> depending on when and where you order. Kroger and Walmart are rolling out digital shelf labels that change prices in real time, in the physical store. The algorithm doesn't just set the price. It sets <em>your</em> price.</p>
+            </div>
+            <div class="card-detail-stats">
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">3.2M</span>
+                <span class="card-mini-stat-label">People losing food assistance each month</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">+23.6%</span>
+                <span class="card-mini-stat-label">Grocery price increase, 2020–2024</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">85%</span>
+                <span class="card-mini-stat-label">of beef processing controlled by four companies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOUSING -->
+      <div class="carousel-card" role="button" tabindex="0" data-topic="housing">
+        <div class="card-preview">
+          <div class="card-domain">Housing</div>
+          <div class="card-context">Median home price — up 50% in 5 years</div>
+          <div class="card-stat">$422K</div>
+          <div class="card-hook">Your kid did the math. She'll never afford a house near home. Down the street, an algorithm just raised everyone's rent at once. Same investors own both problems.</div>
+          <div class="card-expand-hint"><span class="plus">+</span> Read more</div>
+        </div>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="card-detail-narrative">
+              <p>James bought his house in San Jose in 2015 for $680,000. It's worth $1.4 million now. Good news, right? Except his property tax jumped proportionally, his insurance doubled, and his 26-year-old daughter — a credentialed teacher — just told him she'll never be able to buy anywhere near home. He's doing the math on helping with a down payment. It feels like he's subsidizing a system that used to work on its own.</p>
+              <p>This isn't just a Bay Area story. When a tech company opens a campus, home prices within commuting distance jump an average of <strong>7%</strong> almost overnight. Google's San Jose mega-campus will house 25,000 workers — the city approved 7,000 new units. Do the math. The same pattern is playing out in Austin, Seattle, Nashville, and Boise. What happens in Silicon Valley doesn't stay in Silicon Valley.</p>
+              <p>Across town, Nina's rent went up $200 this month. Her landlord didn't renovate anything. RealPage's algorithm told every major landlord in her zip code to raise rents simultaneously — the DOJ filed suit in 2024. She makes $52,000 a year as a medical assistant. <strong>Half of all renters</strong> now spend more than 30% of their income on housing.</p>
+              <p>Institutional investors own <strong>25% of single-family rentals</strong> in some markets. The same forces driving up James's property values are driving Nina out of her apartment and pricing his daughter out of homeownership entirely.</p>
+            </div>
+            <div class="card-detail-stats">
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">50.3%</span>
+                <span class="card-mini-stat-label">of renters are cost-burdened</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">$70/mo</span>
+                <span class="card-mini-stat-label">Estimated rent increase from RealPage's algorithmic pricing</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">25%</span>
+                <span class="card-mini-stat-label">of single-family rentals owned by institutional investors in some markets</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHILDCARE -->
+      <div class="carousel-card" role="button" tabindex="0" data-topic="childcare">
+        <div class="card-preview">
+          <div class="card-domain">Childcare</div>
+          <div class="card-context">Average annual cost per child</div>
+          <div class="card-stat">$13,128</div>
+          <div class="card-hook">Tens of thousands of programs have closed since 2020. She ran the numbers. After childcare and taxes, her second income nets $6,200 a year. She's basically working full-time for free. And that's the "affordable" option.</div>
+          <div class="card-expand-hint"><span class="plus">+</span> Read more</div>
+        </div>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="card-detail-narrative">
+              <p>Priya is a marketing manager in Austin earning $85,000. Her husband is an electrician earning $62,000. They have a toddler and an infant. Childcare for two kids: <strong>$26,000 a year</strong>. After taxes, commuting costs, and work clothes, her take-home from working is barely $6,200 more than if she stayed home. She's working full-time for $3 an hour, net.</p>
+              <p>She doesn't want to quit. She spent six years building her career. But the math is brutal — and it's the same math facing families at every income level. Even households earning $200K are technically priced out of childcare by federal affordability standards in many cities.</p>
+              <p>The bill cut funding for the <strong>Child Care and Development Block Grant</strong>, TANF, and Social Services Block Grant. When those subsidies disappear, centers lose revenue. They raise rates, cut staff, or close — tens of thousands of programs have shut down since 2020. Childcare workers earn a median of <strong>$15/hour</strong>. The entire system depends on workers who can barely afford to live.</p>
+              <p>Immigration enforcement compounds it: immigrant women — many of them mothers themselves — make up a disproportionate share of the <strong>home-based childcare workforce</strong>. When they're pulled from their communities, families on both sides lose: the workers lose their livelihoods, and the parents who depended on them lose the only affordable care they had.</p>
+            </div>
+            <div class="card-detail-stats">
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">$13,128</span>
+                <span class="card-mini-stat-label">National average annual childcare cost per child</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">24%</span>
+                <span class="card-mini-stat-label">of household income spent on childcare on average</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">+29%</span>
+                <span class="card-mini-stat-label">Childcare cost increase 2020–2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="carousel-card" role="button" tabindex="0" data-topic="education">
+        <div class="card-preview">
+          <div class="card-domain">Education</div>
+          <div class="card-context">Pell Grants covered 80% of tuition in 1975. Today: 27%.</div>
+          <div class="card-stat">$1.83T</div>
+          <div class="card-hook">Tyler graduated with a CS degree and $38K in debt. Twenty minutes away, a kid just as sharp never got to go. Same economy failed both of them.</div>
+          <div class="card-expand-hint"><span class="plus">+</span> Read more</div>
+        </div>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="card-detail-narrative">
+              <p>Tyler graduated from Ohio State with a computer science degree and $38,000 in student loans. Under the new law, he'll pay <strong>$3,000 more per year</strong> in loan costs. His starting salary is decent — $72,000 — but after rent, loan payments, car insurance, and utilities, he saves about $200 a month. His parents help where they can — covering his phone bill and car insurance, $250 a month they didn't budget for. <strong>Half of all parents</strong> are now financially supporting adult children, spending an average of <strong>$1,474 a month</strong>. Sixty-one percent say it's come at the cost of their own financial security.</p>
+              <p>Twenty minutes away, a kid just as sharp is stocking shelves at a distribution center for $17 an hour. His high school lost three math teachers in two years — <strong>one in eight</strong> teaching positions nationally is either unfilled or staffed by someone not certified. He could have studied engineering. But community college costs $12,000 a year now, and Pell Grants that covered <strong>80% of tuition in 1975</strong> cover <strong>27% today</strong>. The job posting says "bachelor's preferred." He didn't change. The requirements did.</p>
+              <p>The administration <strong>killed the SAVE repayment plan</strong> and restarted aggressive collections on 28 million borrowers. College tuition has increased <strong>1,200%</strong> since 1980. Total student debt exceeds <strong>$1.83 trillion</strong>. But the crisis isn't just about people who went to college. It's about an economy that made credentials mandatory and then made them unaffordable. The path to stability got longer and more expensive for everyone — and the people who were supposed to fund it pulled the ladder up.</p>
+            </div>
+            <div class="card-detail-stats">
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">$1.83T</span>
+                <span class="card-mini-stat-label">Total outstanding student debt</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">27%</span>
+                <span class="card-mini-stat-label">of tuition covered by Pell Grants today (was 80% in 1975)</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">1 in 8</span>
+                <span class="card-mini-stat-label">teaching positions unfilled or filled by uncertified teachers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENERGY & ENVIRONMENT -->
+      <div class="carousel-card" role="button" tabindex="0" data-topic="energy">
+        <div class="card-preview">
+          <div class="card-domain">Energy &amp; Environment</div>
+          <div class="card-context">Low-income households spend 3x more of their income on energy</div>
+          <div class="card-stat">$35B/yr</div>
+          <div class="card-hook">Fossil fuel companies got $35 billion a year in subsidies. Your electric bill went up anyway. Guess whose costs Congress is focused on cutting.</div>
+          <div class="card-expand-hint"><span class="plus">+</span> Read more</div>
+        </div>
+        <div class="card-detail">
+          <div class="card-detail-inner">
+            <div class="card-detail-narrative">
+              <p>The fossil fuel industry receives <strong>$35 billion a year</strong> in federal subsidies. In 2025, they got <strong>$40 billion more</strong>. Solar is now <strong>41% cheaper</strong> than the cheapest fossil fuel alternative. Wind is <strong>53% cheaper</strong>. The math has been clear for years. The subsidies aren't propping up an industry that needs help. They're protecting margins for one that doesn't.</p>
+              <p>Meanwhile, your electric bill keeps climbing. Part of the reason: AI data centers now consume <strong>4% of all U.S. electricity</strong> — projected to more than double by 2030. A single data center uses as much power as <strong>80,000 homes</strong>. In western Maryland, household bills jumped <strong>$18 a month</strong> after data center clusters moved in. The companies posting record profits from AI aren't absorbing the energy costs. You are.</p>
+              <p>Low-income households already spend <strong>three times more</strong> of their income on energy than everyone else. Rolling back environmental regulations doesn't lower those bills — it lowers costs for the companies that raised them. Repealing EPA carbon standards will cost households an estimated <strong>$130 billion</strong> in health impacts through 2047. In 2024, <strong>27 billion-dollar weather disasters</strong> hit the U.S. — <strong>$183 billion</strong> in total damage. Homeowner insurance premiums rose <strong>24%</strong> in three years. The fossil fuel industry spent <strong>$219 million</strong> to influence the 2024 election. They're not paying for the damage. You are — through your electric bill, your insurance premium, and your taxes.</p>
+            </div>
+            <div class="card-detail-stats">
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">$35B/yr</span>
+                <span class="card-mini-stat-label">Federal subsidies to fossil fuel industry</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">3x</span>
+                <span class="card-mini-stat-label">Energy burden on low-income households vs. average</span>
+              </div>
+              <div class="card-mini-stat">
+                <span class="card-mini-stat-num">$183B</span>
+                <span class="card-mini-stat-label">Weather disaster costs in 2024 alone</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="carousel-nav">
+    <button id="carousel-prev" aria-label="Previous">‹</button>
+    <div class="carousel-dots" id="carousel-dots">
+      <div class="carousel-dot active"></div>
+      <div class="carousel-dot"></div>
+      <div class="carousel-dot"></div>
+      <div class="carousel-dot"></div>
+      <div class="carousel-dot"></div>
+      <div class="carousel-dot"></div>
+    </div>
+    <button id="carousel-next" aria-label="Next">›</button>
+  </div>
+</section>
+
+
+
+<!-- SIMULATOR CALLOUT -->
+<div style="max-width:800px; margin:0 auto; padding:80px 40px;">
+  <div class="sim-callout" style="flex-direction:column; text-align:center; padding:64px 40px; background:linear-gradient(135deg, rgba(0,145,173,0.1) 0%, rgba(178,47,147,0.07) 100%); border:1px solid rgba(0,145,173,0.25); border-radius:8px;">
+    <h3 style="font-family:'Archivo Narrow',sans-serif; font-size:clamp(28px,3.5vw,42px); font-weight:700; color:var(--text); margin-bottom:16px; text-transform:uppercase;">Pull Up a Chair</h3>
+    <p style="font-size:16px; color:#555; line-height:1.7; font-weight:300; max-width:540px; margin:0 auto 28px;">Step into the life of a household navigating safety net cuts &mdash; a single mom losing Medicaid, a retired couple watching SNAP shrink, a family choosing between childcare and rent &mdash; and make the decisions they can&rsquo;t avoid.</p>
+    <a href="https://www.mboldenchange.org/simulator" target="_blank" rel="noopener" class="sim-callout-btn" style="align-self:center; font-size:15px; padding:18px 40px;">Launch the Simulator <span class="arrow">&rarr;</span></a>
+  </div>
+</div>
+
+<!-- BEYOND THE BUDGET -->
+<section class="beyond-section reveal" id="beyond-section">
+  <div class="beyond-inner">
+    <div class="beyond-header">
+      <div class="chapter-tag">It's Not Just the Budget</div>
+      <h2>The Other Bills <span style="color:var(--fuchsia);">You're Paying</span></h2>
+      <p>The Bill is one piece. Tariffs, deregulation, mass detention, and a war Congress never voted for are compounding the squeeze from every direction.</p>
+    </div>
+
+    <div class="beyond-track">
+
+      <div class="beyond-card">
+        <span class="beyond-card-icon">%</span>
+        <h3>Tariffs</h3>
+        <div class="beyond-card-cost">+$2,600</div>
+        <div class="beyond-card-cost-label">peak estimated added cost per household/yr</div>
+        <p>10–145% tariffs on Chinese goods. 25% on steel and aluminum. A baseline 10% on everything else. The Yale Budget Lab pegged the peak cost at $2,600 per household before trade pauses brought it lower. It's a <strong>consumption tax</strong> that hits lower and middle incomes hardest — at the register, in the supply chain, and on every construction site in America.</p>
+      </div>
+
+      <div class="beyond-card">
+        <span class="beyond-card-icon">&#x2716;</span>
+        <h3>DOGE &amp; Deregulation</h3>
+        <div class="beyond-card-cost">$606B</div>
+        <div class="beyond-card-cost-label">annual tax gap · IRS/Treasury estimate</div>
+        <p>When you fire the referees, the players set their own rules. The <strong>CFPB</strong> can't stop predatory lending. The <strong>FDA</strong> can't inspect your food. The <strong>IRS</strong> can't audit wealthy tax cheats — who owe <strong>$606 billion a year</strong> in unpaid taxes. The cost of deregulation shows up in every bill you pay.</p>
+      </div>
+
+      <div class="beyond-card">
+        <span class="beyond-card-icon">&#x1F512;</span>
+        <h3>ICE Actions</h3>
+        <div class="beyond-card-cost">66,000</div>
+        <div class="beyond-card-cost-label">people detained · record high · system at breaking point</div>
+        <p>Neighbors reported. Parents separated at school pickup. Small businesses losing the people who built them. Churches afraid to open their doors. ICE's budget grew <strong>400% in a year</strong> — not to make communities safer, but to make them afraid. The cost isn't just dollars. It's our values, social fabric, and moral leadership.</p>
+      </div>
+
+      <div class="beyond-card">
+        <span class="beyond-card-icon">&#x2738;</span>
+        <h3>War in Iran</h3>
+        <div class="beyond-card-cost">$1B/day</div>
+        <div class="beyond-card-cost-label">Pentagon estimate · Congress never voted</div>
+        <p>The U.S. is spending an estimated <strong>$1 billion a day</strong> on military operations in Iran. Over <strong>$5 billion</strong> in the first week alone. Congress didn't authorize it — both chambers voted down the War Powers Resolution. Nobody asked you. The defense budget was the one line on the receipt nobody touched.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FULL-BLEED IMAGE 2: HOUSING (parallax) -->
+<div class="fullbleed-image fullbleed-parallax" style="background-image:url('assets/housing-affordability.jpeg'); background-position: center 40%;">
+  <div class="fullbleed-image-content">
+    <blockquote>They're not buying homes.<br>They're buying neighborhoods.</blockquote>
+  </div>
+</div>
+
+
+<!-- PULL QUOTE (standalone moment before indictment) -->
+<div class="pull-quote reveal">
+  <blockquote>The cost of living has gone so high, it kinda offsets everything I do to bring money in.</blockquote>
+  <cite>— Resident of Venice, Illinois · Economic Security Project, "The Affordability Framework," October 2025</cite>
+</div>
+
+
+<!-- INDICTMENT MOMENT -->
+<section class="moment moment-dark reveal">
+  <p class="moment-text" style="max-width:900px;">
+    Concentrated economic power <span class="hl-teal">raises prices</span>.<br>
+    The burden falls on <span class="hl-fuchsia">working families</span>.
+  </p>
+</section>
+
+
+<!-- VILLAIN REVEAL: WHO'S SETTING THE PRICES -->
+<section class="villain-section reveal" id="villain-section">
+  <div class="villain-inner">
+    <div class="villain-header">
+      <div class="chapter-tag">Follow the Money Up</div>
+      <h2>Who's <span style="color:var(--fuchsia);">Setting</span> the Prices</h2>
+      <p>Every cost you just saw traces back to specific companies and specific decisions. Click to investigate.</p>
+    </div>
+
+    <div class="villain-index">
+      <div class="villain-index-row" role="button" tabindex="0" data-villain="groceries">
+        <div>
+          <div class="villain-index-domain">Groceries</div>
+          <div class="villain-index-names">Four companies set the price. An algorithm sets <em>your</em> price.</div>
+        </div>
+        <span class="villain-index-arrow">&rarr;</span>
+      </div>
+      <div class="villain-index-row" role="button" tabindex="0" data-villain="healthcare">
+        <div>
+          <div class="villain-index-domain">Healthcare</div>
+          <div class="villain-index-names">Your premium is $27K. The nearest hospital has no competition.</div>
+        </div>
+        <span class="villain-index-arrow">&rarr;</span>
+      </div>
+      <div class="villain-index-row" role="button" tabindex="0" data-villain="housing">
+        <div>
+          <div class="villain-index-domain">Housing</div>
+          <div class="villain-index-names">An algorithm told every landlord in your zip code to raise rent at once.</div>
+        </div>
+        <span class="villain-index-arrow">&rarr;</span>
+      </div>
+      <div class="villain-index-row" role="button" tabindex="0" data-villain="childcare">
+        <div>
+          <div class="villain-index-domain">Childcare</div>
+          <div class="villain-index-names">Workers earn $15/hr. You pay $26K/yr. The math doesn't work for anyone.</div>
+        </div>
+        <span class="villain-index-arrow">&rarr;</span>
+      </div>
+      <div class="villain-index-row" role="button" tabindex="0" data-villain="wages">
+        <div>
+          <div class="villain-index-domain">The Wage Gap</div>
+          <div class="villain-index-names">Corporate profits outpaced your raise nearly 4 to 1 since 1979.</div>
+        </div>
+        <span class="villain-index-arrow">&rarr;</span>
+      </div>
+      <div class="villain-index-row" role="button" tabindex="0" data-villain="education">
+        <div>
+          <div class="villain-index-domain">Education</div>
+          <div class="villain-index-names">Pell Grants covered 80% of tuition in 1975. Today: 27%. The SAVE plan: killed.</div>
+        </div>
+        <span class="villain-index-arrow">&rarr;</span>
+      </div>
+      <div class="villain-index-row" role="button" tabindex="0" data-villain="energy">
+        <div>
+          <div class="villain-index-domain">Energy &amp; Environment</div>
+          <div class="villain-index-names">They got $35 billion in subsidies. Your bill went up $18/month. The math isn't complicated.</div>
+        </div>
+        <span class="villain-index-arrow">&rarr;</span>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:11px;color:#999;margin-top:32px;font-style:italic;">Data: Economic Security Project, CBO, BLS, KFF, NAR, Federal Reserve, DOJ</p>
+  </div>
+</section>
+
+<!-- VILLAIN MODAL -->
+<div class="villain-modal-overlay" id="villain-modal-overlay">
+  <div class="villain-modal" id="villain-modal">
+    <button class="villain-modal-close" id="villain-modal-close">&times;</button>
+    <div class="villain-modal-domain" id="vm-domain"></div>
+    <div class="villain-modal-names" id="vm-names"></div>
+    <div class="villain-modal-stats" id="vm-stats"></div>
+    <div class="villain-modal-narrative" id="vm-narrative"></div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- VALUES STATEMENT -->
+<section class="moment moment-dark reveal">
+  <p class="moment-text" style="max-width:860px;">
+    Show us a budget and we&rsquo;ll show you a <span class="hl-yellow">values&nbsp;system</span>.
+  </p>
+  <div style="max-width:760px; margin:40px auto 0; text-align:center;">
+    <p style="font-size:16px; color:#aaa; font-weight:300; line-height:1.8; margin-bottom:24px;">
+      Values aren&rsquo;t a set of beliefs. They are a set of actions. What we fund. Who we fight for. What we&rsquo;re willing to name out loud, sacrifice for, and vote for. Change happens when enough people start making different decisions &mdash; in how they work, who they center, what they refuse to normalize, and what they decide to build&nbsp;instead.
+    </p>
+    <p style="font-size:16px; color:#aaa; font-weight:300; line-height:1.8; margin-bottom:24px;">
+      That shift is slow and intentional. It has always been. And it has always been possible.
+    </p>
+    <p style="font-size:16px; color:var(--white); font-weight:400; line-height:1.8; margin-bottom:48px;">
+      mBOLDen Change is in that work. We&rsquo;d like you in it with us.
+    </p>
+
+    <!-- Email capture (inside values statement) -->
+    <form action="https://actionnetwork.org/api/v2/forms/84ed140c-a477-46cc-9f43-127b55adad20/" method="POST" style="display:flex; gap:10px; max-width:440px; margin:0 auto; flex-wrap:wrap; justify-content:center;">
+      <input type="hidden" name="form_id" value="701227">
+      <input type="email" name="email" placeholder="Your email" required style="flex:1; min-width:200px; padding:14px 16px; border:1px solid rgba(255,255,255,0.2); border-radius:4px; font-size:15px; font-family:inherit; outline:none; background:rgba(255,255,255,0.08); color:var(--white); transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'">
+      <button type="submit" style="font-family:'Archivo Narrow',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:14px 28px; background:var(--yellow); color:var(--black); border:none; border-radius:4px; cursor:pointer; transition:opacity 0.2s; white-space:nowrap;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Stay in it with us &rarr;</button>
+    </form>
+  </div>
+</section>
+
+<!-- CTA: WHAT YOU CAN DO -->
+<section class="cta-section reveal" id="cta-section">
+  <div class="cta-inner">
+
+    <!-- Two-column CTA: Share + Ask the Hard Question -->
+    <div class="cta-final-row" style="display:grid; grid-template-columns:1fr 1px 1fr; gap:0; max-width:760px; margin:0 auto; align-items:center;">
+
+      <!-- Share -->
+      <div style="text-align:center; padding:40px 32px;">
+        <p style="font-size:14px; color:#555; font-weight:300; line-height:1.6; margin-bottom:20px;">Make sure someone else sees&nbsp;this.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+          <button class="share-btn" id="copy-link-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.classList.add('copied');this.innerHTML='&#10003; Link Copied';setTimeout(()=>{this.classList.remove('copied');this.innerHTML='&#x1F517; Copy Link'},2000)})">&#x1F517; Copy Link</button>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=This%20is%20why%20we%20can%27t%20have%20nice%20things.%20See%20what%20Congress%20funded%20%E2%80%94%20and%20what%20they%20cut.&url=" target="_blank" rel="noopener">&#x1D54F; Share on X</a>
+          <a class="share-btn" href="mailto:?subject=This%20Is%20Why%20We%20Can%27t%20Have%20Nice%20Things&body=See%20what%20Congress%20funded%20and%20what%20they%20cut%3A%20" target="_blank" rel="noopener">&#x2709; Email</a>
+        </div>
+      </div>
+
+      <!-- Vertical divider -->
+      <div class="cta-final-divider" style="background:var(--card-border); align-self:stretch;"></div>
+
+      <!-- Ask the Hard Question -->
+      <div style="text-align:center; padding:40px 32px;">
+        <p style="font-size:14px; color:#555; font-weight:300; line-height:1.6; margin-bottom:16px;">Next time they hold a town hall, bring&nbsp;this:</p>
+        <div class="cta-script" style="margin-bottom:16px; font-size:13px;">&ldquo;Why does everything cost more when the companies charging us are making more money than&nbsp;ever?&rdquo;</div>
+        <a href="https://www.usa.gov/elected-officials" target="_blank" rel="noopener" style="font-family:'Archivo Narrow',sans-serif; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--fuchsia); text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Find Your Officials &rarr;</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- METHODOLOGY -->
+<div class="methodology">
+  <details>
+    <summary>Methodology &amp; Sources</summary>
+    <div class="methodology-body">
+      <div>
+        <p><strong>ICE Budget:</strong> $9.31B base enacted FY2025 (DHS Appropriations); supplemental via reconciliation pushed total past $14B. Detention figures from CBS News / American Immigration Council / Project on Government Oversight, December 2025.</p>
+        <p><strong>Pentagon Budget:</strong> $849.8B DoD base budget requested FY2025; $831.3B enacted under continuing resolution.</p>
+        <p><strong>Price ticker:</strong> Milk (BLS CPI, Jan 2026); insulin (GoodRx/KFF, avg commercial copay for insulin analogs); rent (Zillow Observed Rent Index 2025); childcare (Child Care Aware 2024); premiums (KFF 2025); home price (NAR Q2 2024); student debt (Federal Reserve); deductible (KFF HDHP avg); tariff cost (Yale Budget Lab); energy (Energy Innovation).</p>
+        <p><strong>Healthcare data:</strong> 10M uninsured from Medicaid cuts (CBO); 5M additional from ACA credit expiration; family premiums from KFF 2025; 100 million Americans owe $220B+ in medical debt per Peterson-KFF / CFPB; ACA premium increase from Center for American Progress, June 2025.</p>
+        <p><strong>Food data:</strong> SNAP cuts $295B/10yr per CBO. 3.2M lose benefits monthly (Commonwealth Fund). Grocery prices +23.6% from USDA ERS/BLS CPI. Beef concentration from White House/Farm Action.</p>
+        <p><strong>Housing data:</strong> Median home price from NAR Q2 2024. Cost-burdened renters from Census ACS 2024/Harvard JCHS. RealPage from DOJ lawsuit, Aug 2024. Institutional investor share from GAO.</p>
+        <p><strong>Childcare data:</strong> Costs from Child Care Aware 2024/Care.com/Dept of Labor. program closures from CLASP, March 2025; HHS Administration for Children and Families. Income requirements from National Women's Law Center, Feb 2025.</p>
+        <p><strong>Energy/Education:</strong> $170/yr from Energy Innovation, July 2025. $3,000/yr from Protect Borrowers, June 2025. Student debt total from Federal Reserve/FSA.</p>
+      </div>
+      <div>
+        <p><strong>Distributional analysis:</strong> Bottom 10% −3.1%, top 10% +2.7% by 2034 from CBO distributional analysis of Public Law 119-21, July 2025.</p>
+        <p><strong>Parents supporting adult children:</strong> Savings.com 2025 survey; Bankrate 2024.</p>
+        <p><strong>Google campus data:</strong> Google Downtown West approved by San Jose City Council, May 2021; worker/unit figures from city planning documents.</p>
+        <p><strong>Prop 22:</strong> California Secretary of State campaign finance records, 2020.</p>
+        <p><strong>Iran operations:</strong> Pentagon operational cost estimates, March 2026; CSIS analysis.</p>
+        <p><strong>Tax gap:</strong> IRS Publication 5869, October 2024 (TY2022 estimates). Net gap $606B.</p>
+        <p><strong>Insurance premiums:</strong> Consumer Federation of America, April 2025. 24% increase 2021–2024.</p>
+        <p><strong>Affordability Framework:</strong> Economic Security Project, "The Affordability Framework," October 2025.</p>
+        <p><strong>Sources:</strong> <a href="https://www.cbo.gov/publication/61570" target="_blank">CBO</a> · <a href="https://comptroller.defense.gov/Budget-Materials/" target="_blank">DoD</a> · <a href="https://www.dhs.gov" target="_blank">DHS</a> · <a href="https://www.kff.org" target="_blank">KFF</a> · <a href="https://www.commonwealthfund.org" target="_blank">Commonwealth Fund</a> · <a href="https://economicsecurityproject.org" target="_blank">ESP</a></p>
+      </div>
+    </div>
+  </details>
+</div>
+
+<footer>
+  <span>A project of mBOLDen Change &nbsp;·&nbsp; <a href="https://www.mboldenchange.org" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline; text-underline-offset:2px;">mboldenchange.org</a></span>
+  <span>Sources: CBO · DHS · DoD · KFF · ESP · Commonwealth Fund · USDA · BLS · DOJ · NOAA · NAHB · IRS · GAO · IRENA · All figures in nominal U.S. dollars</span>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script src="scripts.js"></script>
+
+</body>
+</html>
