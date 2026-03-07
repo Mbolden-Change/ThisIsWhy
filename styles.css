@@ -435,10 +435,7 @@
   .carousel-card[data-topic="education"]::before { background: var(--fuchsia); }
   .carousel-card[data-topic="energy"]::before { background: #b89a00; }
 
-  .card-preview {
-    padding: 32px 28px; display: flex; flex-direction: column;
-    min-height: 0;           /* allow flex children to shrink */
-  }
+  .card-preview { padding: 32px 28px; }
   .card-domain {
     font-family: 'Archivo Narrow', sans-serif;
     font-size: clamp(18px, 2.5vw, 26px);
@@ -461,16 +458,13 @@
   .carousel-card[data-topic="education"] .card-stat { color: var(--fuchsia); }
   .carousel-card[data-topic="energy"] .card-stat { color: #b89a00; }
 
-  .card-hook {
-    font-size: 15px; color: #555; line-height: 1.6; font-weight: 300; margin-bottom: 16px;
-    flex: 1; overflow: hidden;
-    display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
-  }
+  .card-hook { font-size: 15px; color: #555; line-height: 1.6; font-weight: 300; margin-bottom: 16px; }
   .card-expand-hint {
     font-family: 'Archivo Narrow', sans-serif; font-size: 11px;
     letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--muted); font-weight: 700;
     display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+    border-top: 1px solid var(--card-border); padding-top: 16px;
   }
   .card-expand-hint .plus {
     display: inline-flex; width: 20px; height: 20px;
@@ -484,7 +478,6 @@
   .card-detail {
     max-height: 0; overflow: hidden;
     transition: max-height 0.5s ease;
-    border-top: 1px solid var(--card-border);
   }
   .carousel-card.expanded .card-detail { max-height: 1200px; }
   .carousel-card.expanded .plus { transform: rotate(45deg); }
