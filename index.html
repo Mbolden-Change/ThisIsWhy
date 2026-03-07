@@ -762,19 +762,25 @@
               li.style.cssText = 'display:none!important; list-style:none!important;';
           });
 
-          /* CAPTURE-PHASE click handler on submit button:
-             Fires BEFORE AN's handler. Hides wrapper instantly.
-             The click still propagates → AN fires its AJAX submission.
-             Hidden elements don't cancel pending AJAX requests. */
-          if (submitBtn) {
-            submitBtn.addEventListener('click', function() {
-              var emailField = container.querySelector('input[type="email"], input#form-email');
-              if (emailField && emailField.value && emailField.value.indexOf('@') > 0) {
-                wrapper.style.cssText = 'display:none!important;';
-                thankYou.style.display = 'block';
-              }
-            }, true); /* true = capture phase, fires first */
-          }
+          /* Intercept form submit: prevent AN's page navigation,
+             submit data via fetch(), show our custom thank-you. */
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            var emailField = container.querySelector('input[type="email"], input#form-email');
+            if (!emailField || !emailField.value || emailField.value.indexOf('@') < 1) return;
+
+            /* Collect form data and POST via fetch */
+            var formData = new FormData(form);
+            fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              mode: 'no-cors'   /* AN doesn't set CORS headers; fire-and-forget */
+            }).catch(function() {}); /* ignore network errors — no-cors responses are opaque */
+
+            wrapper.style.cssText = 'display:none!important;';
+            thankYou.style.display = 'block';
+          }, true); /* capture phase */
 
           clearInterval(timer);
         }, 200);
