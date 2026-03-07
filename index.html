@@ -219,7 +219,7 @@
 
 
 <!-- FULL-BLEED IMAGE (parallax) -->
-<div class="fullbleed-image fullbleed-parallax" id="fullbleed-parallax" style="background-image:url('shopper.jpeg');">
+<div class="fullbleed-image fullbleed-parallax" id="fullbleed-parallax" style="background-image:url('assets/shopper.jpeg');">
   <div class="fullbleed-image-content">
     <blockquote>Every family has a number.<br>The one that keeps them up at night.</blockquote>
   </div>
@@ -528,7 +528,7 @@
 
 
 <!-- FULL-BLEED IMAGE 2: HOUSING (parallax) -->
-<div class="fullbleed-image fullbleed-parallax" style="background-image:url('housing-affordability.jpeg'); background-position: center 40%;">
+<div class="fullbleed-image fullbleed-parallax" style="background-image:url('assets/housing-affordability.jpeg'); background-position: center 40%;">
   <div class="fullbleed-image-content">
     <blockquote>They're not buying homes.<br>They're buying neighborhoods.</blockquote>
   </div>
@@ -847,6 +847,24 @@
             clearInterval(timer);
           }
         }, 200);
+      })();
+
+      /* Watch for AN thank-you takeover and replace with clean message */
+      (function() {
+        var container = document.getElementById('can-form-area-sign-up-to-get-the-latest-from-mbolden-change');
+        if (!container) return;
+
+        var observer = new MutationObserver(function() {
+          /* Detect thank-you state: AN shows h2 "Thanks for signing up" or similar */
+          var h2 = container.querySelector('h2');
+          if (h2 && /thanks|thank you|signed up/i.test(h2.textContent)) {
+            observer.disconnect();
+            /* Replace entire container content with our styled message */
+            container.innerHTML = '<p style="font-family:Roboto,sans-serif; font-size:16px; color:var(--yellow); text-align:center; padding:14px 0; margin:0;">Thanks \u2014 you\u2019re in. We\u2019ll be in touch.</p>';
+          }
+        });
+
+        observer.observe(container, { childList: true, subtree: true, characterData: true });
       })();
     </script>
   </div>
