@@ -650,26 +650,44 @@
 
     <!-- Email capture — Action Network embed with custom styling -->
     <style>
-      /* Override Action Network embed styles to match site design */
+      /* Override Action Network v6 embed to match site design */
+      /* Scope: #can-form-area-sign-up-to-get-the-latest-from-mbolden-change */
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change {
         max-width: 440px;
         margin: 0 auto;
       }
+      /* Hide AN headings, description, sidebar, branding, and info */
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change h2,
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change h4,
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change p,
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change label,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_status_running_total,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_sidebar,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_owner,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_info_user,
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #action_info,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #can-main-content > div:first-child,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_sidebar {
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #logo_wrap,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .international_link-wrap,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .country_drop_wrap,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .clear {
         display: none !important;
       }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #can-main-content {
+      /* Reset embed wrapper */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .can_embed {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #can_embed_form,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #can_embed_form_inner {
         padding: 0 !important;
         margin: 0 !important;
+        background: none !important;
+        float: none !important;
+        width: 100% !important;
       }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change form {
+      /* Form layout: flex row */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change form#new_answer {
         display: flex !important;
         gap: 10px !important;
         flex-wrap: wrap !important;
@@ -680,20 +698,39 @@
         border: none !important;
         box-shadow: none !important;
       }
-      /* Hide all fields except email */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .input-group {
-        display: none !important;
+      /* Hide the wrapper div and list container, let JS handle visibility */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change form > div,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #form_col1 {
+        display: contents !important;
       }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .input-group:has(input[type="email"]),
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .input-group:has(input[name*="email"]) {
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.form_builder_output {
+        display: contents !important;
+        list-style: none !important;
+      }
+      /* Hide ALL core fields by default */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.core_field {
+        display: none !important;
+        list-style: none !important;
+      }
+      /* Show only the email field */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.core_field:has(input[type="email"]) {
         display: block !important;
         flex: 1 !important;
         min-width: 200px !important;
         margin: 0 !important;
         padding: 0 !important;
       }
+      /* Hide floatlabel labels */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .floatlabel-label {
+        display: none !important;
+      }
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .floatlabel-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      /* Email input styling */
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="email"],
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[name*="email"] {
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input#form-email {
         width: 100% !important;
         padding: 14px 16px !important;
         border: 1px solid rgba(255,255,255,0.2) !important;
@@ -705,17 +742,18 @@
         color: var(--white) !important;
         transition: border-color 0.2s !important;
         box-sizing: border-box !important;
+        height: auto !important;
       }
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="email"]:focus,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[name*="email"]:focus {
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input#form-email:focus {
         border-color: var(--teal) !important;
       }
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="email"]::placeholder,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[name*="email"]::placeholder {
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input#form-email::placeholder {
         color: rgba(255,255,255,0.4) !important;
       }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="submit"],
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change button[type="submit"] {
+      /* Submit button styling */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="submit"] {
         font-family: 'Archivo Narrow', sans-serif !important;
         font-size: 14px !important;
         font-weight: 700 !important;
@@ -730,17 +768,11 @@
         transition: opacity 0.2s !important;
         white-space: nowrap !important;
         line-height: normal !important;
+        width: auto !important;
+        margin: 0 !important;
       }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="submit"]:hover,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change button[type="submit"]:hover {
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="submit"]:hover {
         opacity: 0.85 !important;
-      }
-      /* Hide AN branding/footer */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_footer,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .can_thank_you,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .international_link,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .clearfix {
-        display: none !important;
       }
       /* Style the thank-you / success message */
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #action_info.action_thankyou {
@@ -755,7 +787,7 @@
     <div id='can-form-area-sign-up-to-get-the-latest-from-mbolden-change' style='width: 100%'><!-- Action Network form loads here --></div>
     <script src='https://actionnetwork.org/widgets/v6/form/sign-up-to-get-the-latest-from-mbolden-change?format=js&source=widget'></script>
     <script>
-      /* Customize Action Network form after it loads */
+      /* Customize Action Network v6 form after it loads */
       (function() {
         var attempts = 0;
         var maxAttempts = 50;
@@ -764,33 +796,40 @@
           var container = document.getElementById('can-form-area-sign-up-to-get-the-latest-from-mbolden-change');
           if (!container) { clearInterval(timer); return; }
 
-          /* Hide non-email input groups, show only email */
-          var groups = container.querySelectorAll('.input-group');
-          groups.forEach(function(g) {
-            var emailInput = g.querySelector('input[type="email"], input[name*="email"]');
+          var form = container.querySelector('form#new_answer');
+          if (!form && attempts < maxAttempts) return;
+          if (!form) { clearInterval(timer); return; }
+
+          /* Hide all li.core_field except the one with the email input */
+          var fields = container.querySelectorAll('li.core_field');
+          fields.forEach(function(li) {
+            var emailInput = li.querySelector('input[type="email"], input#form-email');
             if (emailInput) {
-              g.style.display = 'block';
-              g.style.flex = '1';
-              g.style.minWidth = '200px';
-              g.style.margin = '0';
-              g.style.padding = '0';
+              li.style.cssText = 'display:block!important; flex:1!important; min-width:200px!important; margin:0!important; padding:0!important; list-style:none!important;';
               emailInput.setAttribute('placeholder', 'Your email');
             } else {
-              g.style.display = 'none';
+              li.style.cssText = 'display:none!important;';
             }
           });
 
+          /* Also hide the form_builder_output list bullet styling */
+          var fbo = container.querySelector('li.form_builder_output');
+          if (fbo) fbo.style.cssText = 'display:contents!important; list-style:none!important;';
+
           /* Rename submit button */
-          var submitBtn = container.querySelector('input[type="submit"], button[type="submit"]');
+          var submitBtn = container.querySelector('input[type="submit"]');
           if (submitBtn) {
-            if (submitBtn.tagName === 'INPUT') {
-              submitBtn.value = 'Stay in it with us \u2192';
-            } else {
-              submitBtn.textContent = 'Stay in it with us \u2192';
-            }
+            submitBtn.value = 'Stay in it with us \u2192';
           }
 
-          if (groups.length > 0 || attempts >= maxAttempts) {
+          /* Hide AN branding elements */
+          var hideSelectors = ['#logo_wrap', '.action_owner', '.action_info_user', '#action_info', '.international_link-wrap', '.country_drop_wrap'];
+          hideSelectors.forEach(function(sel) {
+            var el = container.querySelector(sel);
+            if (el) el.style.cssText = 'display:none!important;';
+          });
+
+          if (fields.length > 0) {
             clearInterval(timer);
           }
         }, 200);
