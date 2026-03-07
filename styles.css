@@ -76,10 +76,10 @@
   .sticky-ticker-track .price-ticker-item { display: flex; align-items: baseline; gap: 6px; white-space: nowrap; flex-shrink: 0; }
   .sticky-ticker-track .price-ticker-price {
     font-family: 'Archivo Narrow', sans-serif;
-    font-size: 12px; font-weight: 700; color: var(--white);
+    font-size: 13px; font-weight: 700; color: var(--yellow);
   }
   .sticky-ticker-track .price-ticker-label {
-    font-size: 10px; color: #aaa; font-weight: 300;
+    font-size: 11px; color: #ddd; font-weight: 300;
   }
   .sticky-ticker-track .price-ticker-dot {
     width: 3px; height: 3px; border-radius: 50%;
