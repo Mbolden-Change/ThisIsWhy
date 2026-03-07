@@ -648,242 +648,45 @@
       mBOLDen Change is in that work. We&rsquo;d like you in it with us.
     </p>
 
-    <!-- Email capture — Action Network embed with custom styling -->
-    <style>
-      /* Override Action Network v6 embed to match site design */
-      /* Scope: #can-form-area-sign-up-to-get-the-latest-from-mbolden-change */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change {
-        max-width: 440px;
-        margin: 0 auto;
-      }
-      /* Hide AN headings, description, sidebar, branding, and info */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change h2,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change h4,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change p,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change label,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_sidebar,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_owner,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .action_info_user,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #action_info,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #logo_wrap,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .international_link-wrap,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .country_drop_wrap,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .clear {
-        display: none !important;
-      }
-      /* Reset embed wrapper */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .can_embed {
-        background: none !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-      }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #can_embed_form,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #can_embed_form_inner {
-        padding: 0 !important;
-        margin: 0 !important;
-        background: none !important;
-        float: none !important;
-        width: 100% !important;
-      }
-      /* Form layout: flex row */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change form#new_answer {
-        display: flex !important;
-        gap: 10px !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        background: none !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
-      /* Hide the wrapper div and list container, let JS handle visibility */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change form > div,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #form_col1 {
-        display: contents !important;
-      }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.form_builder_output {
-        display: contents !important;
-        list-style: none !important;
-      }
-      /* Hide ALL list items by default */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.core_field,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.checkbox_group_wrap,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change ul li {
-        display: none !important;
-        list-style: none !important;
-      }
-      /* Hide AN ajax spinner */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change img.ajax-loading {
-        display: none !important;
-      }
-      /* Show only the email field */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.core_field:has(input[type="email"]) {
-        display: block !important;
-        flex: 1 !important;
-        min-width: 200px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      /* Hide floatlabel labels */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .floatlabel-label {
-        display: none !important;
-      }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change .floatlabel-wrapper {
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      /* Email input styling */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="email"],
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input#form-email {
-        width: 100% !important;
-        padding: 14px 16px !important;
-        border: 1px solid rgba(255,255,255,0.2) !important;
-        border-radius: 4px !important;
-        font-size: 15px !important;
-        font-family: 'Roboto', sans-serif !important;
-        outline: none !important;
-        background: rgba(255,255,255,0.08) !important;
-        color: var(--white) !important;
-        transition: border-color 0.2s !important;
-        box-sizing: border-box !important;
-        height: auto !important;
-      }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="email"]:focus,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input#form-email:focus {
-        border-color: var(--teal) !important;
-      }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="email"]::placeholder,
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input#form-email::placeholder {
-        color: rgba(255,255,255,0.4) !important;
-      }
-      /* Submit button styling */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="submit"] {
-        font-family: 'Archivo Narrow', sans-serif !important;
-        font-size: 14px !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.04em !important;
-        text-transform: uppercase !important;
-        padding: 14px 28px !important;
-        background: var(--yellow) !important;
-        color: var(--black) !important;
-        border: none !important;
-        border-radius: 4px !important;
-        cursor: pointer !important;
-        transition: opacity 0.2s !important;
-        white-space: nowrap !important;
-        line-height: normal !important;
-        width: auto !important;
-        margin: 0 !important;
-      }
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change input[type="submit"]:hover {
-        opacity: 0.85 !important;
-      }
-      /* Style the thank-you / success message */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change #action_info.action_thankyou {
-        display: block !important;
-        font-family: 'Roboto', sans-serif !important;
-        font-size: 16px !important;
-        color: var(--yellow) !important;
-        text-align: center !important;
-        padding: 14px 0 !important;
-      }
-    </style>
-    <div id='can-form-area-sign-up-to-get-the-latest-from-mbolden-change' style='width: 100%'><!-- Action Network form loads here --></div>
-    <p id="an-thankyou-msg" style="display:none; font-family:Roboto,sans-serif; font-size:16px; color:var(--yellow); text-align:center; padding:14px 0; margin:0;">Thanks &mdash; you&rsquo;re in. We&rsquo;ll be in touch.</p>
+    <!-- Email capture — custom form + hidden AN widget proxy -->
+
+    <!-- AN widget loads off-screen (handles AJAX + CSRF internally) -->
+    <div id='can-form-area-sign-up-to-get-the-latest-from-mbolden-change' style='position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; overflow:hidden; pointer-events:none; opacity:0;'><!-- AN form loads here --></div>
     <script src='https://actionnetwork.org/widgets/v6/form/sign-up-to-get-the-latest-from-mbolden-change?format=js&source=widget'></script>
+
+    <!-- Our visible form -->
+    <form id="mbolden-email-form" style="display:flex; gap:10px; max-width:440px; margin:0 auto; flex-wrap:wrap; justify-content:center;">
+      <input type="email" id="mbolden-email-input" placeholder="Your email" required style="flex:1; min-width:200px; padding:14px 16px; border:1px solid rgba(255,255,255,0.2); border-radius:4px; font-size:15px; font-family:inherit; outline:none; background:rgba(255,255,255,0.08); color:var(--white); transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'">
+      <button type="submit" style="font-family:'Archivo Narrow',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:14px 28px; background:var(--yellow); color:var(--black); border:none; border-radius:4px; cursor:pointer; transition:opacity 0.2s; white-space:nowrap;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Stay in it with us &rarr;</button>
+    </form>
+    <p id="mbolden-thankyou" style="display:none; font-family:'Roboto',sans-serif; font-size:16px; color:var(--yellow); text-align:center; padding:14px 0; margin:0;">Thanks &mdash; you&rsquo;re in. We&rsquo;ll be in touch.</p>
+
     <script>
-      /* Customize Action Network v6 form after it loads */
-      (function() {
-        var attempts = 0;
-        var maxAttempts = 50;
-        var timer = setInterval(function() {
-          attempts++;
-          var container = document.getElementById('can-form-area-sign-up-to-get-the-latest-from-mbolden-change');
-          if (!container) { clearInterval(timer); return; }
+      /* Proxy submission: our form → hidden AN widget form */
+      document.getElementById('mbolden-email-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('mbolden-email-input').value;
+        if (!email) return;
 
-          var form = container.querySelector('form#new_answer');
-          if (!form && attempts < maxAttempts) return;
-          if (!form) { clearInterval(timer); return; }
+        /* Find AN's hidden email field and fill it */
+        var anContainer = document.getElementById('can-form-area-sign-up-to-get-the-latest-from-mbolden-change');
+        var anEmail = anContainer && anContainer.querySelector('input[type="email"], input#form-email');
+        var anSubmit = anContainer && anContainer.querySelector('input[type="submit"]');
 
-          /* Hide all li.core_field except the one with the email input */
-          var fields = container.querySelectorAll('li.core_field');
-          fields.forEach(function(li) {
-            var emailInput = li.querySelector('input[type="email"], input#form-email');
-            if (emailInput) {
-              li.style.cssText = 'display:block!important; flex:1!important; min-width:200px!important; margin:0!important; padding:0!important; list-style:none!important;';
-              emailInput.setAttribute('placeholder', 'Your email');
-            } else {
-              li.style.cssText = 'display:none!important;';
-            }
-          });
+        if (anEmail && anSubmit) {
+          /* Set value and trigger input events so AN's JS picks it up */
+          anEmail.value = email;
+          anEmail.dispatchEvent(new Event('input', {bubbles: true}));
+          anEmail.dispatchEvent(new Event('change', {bubbles: true}));
+          anEmail.dispatchEvent(new Event('blur', {bubbles: true}));
+          /* Click AN's submit button to trigger their AJAX handler */
+          anSubmit.click();
+        }
 
-          /* Also hide the form_builder_output list bullet styling */
-          var fbo = container.querySelector('li.form_builder_output');
-          if (fbo) fbo.style.cssText = 'display:contents!important; list-style:none!important;';
-
-          /* Rename submit button */
-          var submitBtn = container.querySelector('input[type="submit"]');
-          if (submitBtn) {
-            submitBtn.value = 'Stay in it with us \u2192';
-          }
-
-          /* Hide AN branding, checkbox groups, empty LIs, spinner */
-          var hideSelectors = ['#logo_wrap', '.action_owner', '.action_info_user', '#action_info', '.international_link-wrap', '.country_drop_wrap', 'img.ajax-loading'];
-          hideSelectors.forEach(function(sel) {
-            var el = container.querySelector(sel);
-            if (el) el.style.cssText = 'display:none!important;';
-          });
-
-          /* Hide any non-core-field list items (checkbox groups, empty LIs) */
-          var allLis = container.querySelectorAll('li');
-          allLis.forEach(function(li) {
-            if (!li.classList.contains('core_field') && !li.classList.contains('form_builder_output')) {
-              li.style.cssText = 'display:none!important; list-style:none!important;';
-            }
-          });
-
-          /* --- Thank-you handler --- */
-          /* On submit: hide entire AN container, show our clean message */
-          var thankYouMsg = document.getElementById('an-thankyou-msg');
-
-          form.addEventListener('submit', function() {
-            /* Small delay to let AN process the AJAX submission */
-            setTimeout(function() {
-              container.style.cssText = 'display:none!important;';
-              if (thankYouMsg) thankYouMsg.style.display = 'block';
-            }, 600);
-          });
-
-          /* Backup: also listen for click on submit button */
-          if (submitBtn) {
-            submitBtn.addEventListener('click', function() {
-              var emailField = container.querySelector('input[type="email"], input#form-email');
-              if (emailField && emailField.value && emailField.validity.valid) {
-                setTimeout(function() {
-                  container.style.cssText = 'display:none!important;';
-                  if (thankYouMsg) thankYouMsg.style.display = 'block';
-                }, 600);
-              }
-            });
-          }
-
-          /* Backup: poll for AN thank-you state in case above doesn't catch it */
-          var pollTimer = setInterval(function() {
-            var h2 = container.querySelector('h2');
-            if (h2 && /thanks|thank you|signed up/i.test(h2.textContent) && window.getComputedStyle(h2).display !== 'none') {
-              clearInterval(pollTimer);
-              container.style.cssText = 'display:none!important;';
-              if (thankYouMsg) thankYouMsg.style.display = 'block';
-            }
-          }, 300);
-
-          if (fields.length > 0) {
-            clearInterval(timer);
-          }
-        }, 200);
-      })();
+        /* Show our thank-you, hide our form */
+        this.style.display = 'none';
+        document.getElementById('mbolden-thankyou').style.display = 'block';
+      });
     </script>
   </div>
 </section>
