@@ -707,10 +707,16 @@
         display: contents !important;
         list-style: none !important;
       }
-      /* Hide ALL core fields by default */
-      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.core_field {
+      /* Hide ALL list items by default */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.core_field,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.checkbox_group_wrap,
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change ul li {
         display: none !important;
         list-style: none !important;
+      }
+      /* Hide AN ajax spinner */
+      #can-form-area-sign-up-to-get-the-latest-from-mbolden-change img.ajax-loading {
+        display: none !important;
       }
       /* Show only the email field */
       #can-form-area-sign-up-to-get-the-latest-from-mbolden-change li.core_field:has(input[type="email"]) {
@@ -822,11 +828,19 @@
             submitBtn.value = 'Stay in it with us \u2192';
           }
 
-          /* Hide AN branding elements */
-          var hideSelectors = ['#logo_wrap', '.action_owner', '.action_info_user', '#action_info', '.international_link-wrap', '.country_drop_wrap'];
+          /* Hide AN branding, checkbox groups, empty LIs, spinner */
+          var hideSelectors = ['#logo_wrap', '.action_owner', '.action_info_user', '#action_info', '.international_link-wrap', '.country_drop_wrap', 'img.ajax-loading'];
           hideSelectors.forEach(function(sel) {
             var el = container.querySelector(sel);
             if (el) el.style.cssText = 'display:none!important;';
+          });
+
+          /* Hide any non-core-field list items (checkbox groups, empty LIs) */
+          var allLis = container.querySelectorAll('li');
+          allLis.forEach(function(li) {
+            if (!li.classList.contains('core_field') && !li.classList.contains('form_builder_output')) {
+              li.style.cssText = 'display:none!important; list-style:none!important;';
+            }
           });
 
           if (fields.length > 0) {
