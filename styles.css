@@ -920,6 +920,11 @@
     .splash-tagline { font-size: 10px; }
   }
 
+  /* ── TABLET PORTRAIT ── */
+  @media (max-width: 1024px) and (orientation: portrait) {
+    .fullbleed-image { min-height: 50vh; }
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .receipt-container { grid-template-columns: 1fr; gap: 0; }
