@@ -1,4 +1,34 @@
-// ── Sticky price ticker ──
+// ── Splash card ──
+  (function() {
+    var overlay = document.getElementById('splash-overlay');
+    var closeBtn = document.getElementById('splash-close');
+    if (!overlay) return;
+
+    // Only show once per session
+    if (sessionStorage.getItem('splash-seen')) {
+      overlay.classList.add('hidden');
+      return;
+    }
+
+    function dismissSplash() {
+      overlay.classList.add('fade-out');
+      sessionStorage.setItem('splash-seen', '1');
+      setTimeout(function() { overlay.classList.add('hidden'); }, 600);
+    }
+
+    // Auto-dismiss after 3.5 seconds
+    setTimeout(dismissSplash, 3500);
+
+    // Click close button
+    closeBtn.addEventListener('click', dismissSplash);
+
+    // Click anywhere on overlay to dismiss
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) dismissSplash();
+    });
+  })();
+
+  // ── Sticky price ticker ──
   const hookSection = document.getElementById('hook');
   const stickyTicker = document.getElementById('sticky-ticker');
   const tickerObserver = new IntersectionObserver((entries) => {
@@ -127,7 +157,7 @@
         for (let i = 0; i < pairs; i++) {
           const delay = i * 400;
           if (leftItems[i]) setTimeout(() => leftItems[i].classList.add('printed'), delay);
-          if (rightItems[i]) setTimeout(() => rightItems[i].classList.add('printed'), delay + 100);
+          if (rightItems[i]) setTimeout(() => rightItems[i].classList.add('printed'), delay);
         }
         receiptObserver.unobserve(entry.target);
       }
