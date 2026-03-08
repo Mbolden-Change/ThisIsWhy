@@ -737,8 +737,8 @@
     background-size: cover;
     background-position: center 30%;
   }
-  @supports (-webkit-overflow-scrolling: touch) {
-    /* iOS doesn't support background-attachment:fixed — fall back */
+  /* iOS/iPadOS doesn't support background-attachment:fixed — detect via touch */
+  @media (pointer: coarse) {
     .fullbleed-parallax { background-attachment: scroll; }
   }
   @media (max-width: 768px) {
@@ -967,5 +967,6 @@
 
   /* ── PORTRAIT DEVICES: tame fullbleed image zoom ── */
   @media (max-width: 1024px) and (orientation: portrait) {
-    .fullbleed-image { min-height: 40vh; }
+    .fullbleed-image,
+    .fullbleed-parallax { min-height: 40vh; background-attachment: scroll; }
   }
