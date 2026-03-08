@@ -920,11 +920,6 @@
     .splash-tagline { font-size: 10px; }
   }
 
-  /* ── TABLET PORTRAIT ── */
-  @media (max-width: 1024px) and (orientation: portrait) {
-    .fullbleed-image { min-height: 50vh; }
-  }
-
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .receipt-container { grid-template-columns: 1fr; gap: 0; }
@@ -968,4 +963,9 @@
     .fullbleed-image { min-height: 65vh; }
     .fullbleed-image-content { padding: 40px 20px; }
     /* indictment section now uses .moment responsive styles */
+  }
+
+  /* ── PORTRAIT DEVICES: tame fullbleed image zoom ── */
+  @media (max-width: 1024px) and (orientation: portrait) {
+    .fullbleed-image { min-height: 40vh; }
   }
