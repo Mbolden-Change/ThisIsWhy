@@ -877,6 +877,24 @@
   }
   .footer-mission a:hover { border-bottom-color: var(--teal); }
 
+  /* ── Hook nav link (top-right, mirrors logo) ── */
+  .hook-nav-link {
+    position: absolute;
+    top: 62px;
+    right: 40px;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+  .hook-nav-link:hover { color: var(--yellow); }
+
   /* ── SPLASH CARD ── */
   .splash-overlay {
     position: fixed; inset: 0; z-index: 9999;
@@ -962,6 +980,7 @@
     .stat-break-number { font-size: clamp(48px, 15vw, 100px); }
     .fullbleed-image { min-height: 65vh; }
     .fullbleed-image-content { padding: 40px 20px; }
+    .hook-nav-link { font-size: 11px; right: 24px; top: 28px; }
     /* indictment section now uses .moment responsive styles */
   }
 
