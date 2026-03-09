@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use These Templates | mBOLDen Change</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #0091AD;
+            --fuchsia: #B22F93;
+            --yellow: #FAD826;
+            --black: #000;
+            --bg: #fafafa;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg);
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 12px;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-top: 32px;
+            margin-bottom: 16px;
+            padding-top: 20px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        h3 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Intro section */
+        .intro {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid var(--teal);
+            margin-bottom: 28px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Code blocks */
+        pre {
+            background-color: #f5f5f5;
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 2px;
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        /* Accents */
+        strong {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .accent-teal {
+            color: var(--teal);
+        }
+
+        .accent-fuchsia {
+            color: var(--fuchsia);
+        }
+
+        /* Section spacing */
+        section {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+                background-color: white;
+            }
+
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            h1 {
+                page-break-after: avoid;
+            }
+
+            h2 {
+                page-break-after: avoid;
+                page-break-before: avoid;
+            }
+
+            h3 {
+                page-break-after: avoid;
+            }
+
+            pre {
+                page-break-inside: avoid;
+            }
+
+            ul, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Links */
+        a {
+            color: var(--teal);
+            text-decoration: none;
+            border-bottom: 1px solid var(--teal);
+        }
+
+        a:hover {
+            color: var(--fuchsia);
+            border-bottom-color: var(--fuchsia);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How to Use These Templates</h1>
+        <div class="subtitle">A setup guide for The Receipt and The Villain Index</div>
+        <div class="meta">mBOLDen Change · <a href="https://mboldenchange.org">mboldenchange.org</a></div>
+
+        <section class="intro">
+            <p>Both templates are standalone HTML files. You don't need a CMS, a developer, or special software to get started. If you can edit a text file and open it in a browser, you can use these. That said, if you want help customizing for your community, we're available — reach out at <a href="mailto:action@mboldenchange.org">action@mboldenchange.org</a>.</p>
+        </section>
+
+        <!-- What's in the Download -->
+        <section>
+            <h2>What's in the Download</h2>
+            <p>Each template comes in two versions:</p>
+            <ul>
+                <li><strong>Plug-and-play:</strong> Our current data, ready to embed or use as-is. No edits needed.</li>
+                <li><strong>White-label template:</strong> Placeholder data you replace with your own numbers, your own stories, your own community.</li>
+            </ul>
+        </section>
+
+        <!-- What You'll Need -->
+        <section>
+            <h2>What You'll Need</h2>
+            <ul>
+                <li>A text editor (Notepad, TextEdit, VS Code, or similar)</li>
+                <li>A web browser to preview your changes</li>
+                <li>Your data (budget numbers, sources, character stories)</li>
+                <li>Optional: someone on your team comfortable with basic HTML</li>
+            </ul>
+        </section>
+
+        <!-- The Receipt -->
+        <section>
+            <h2>The Receipt — How to Customize</h2>
+
+            <h3>Understanding the Structure</h3>
+            <p>The receipt has two sides: <strong>'Funded & Protected'</strong> (left) and <strong>'Cut & Defunded'</strong> (right). Each item has five parts:</p>
+            <ol style="margin-left: 24px; margin-bottom: 16px;">
+                <li><strong>Label</strong> — the category (e.g., "Health Coverage")</li>
+                <li><strong>Program</strong> — the specific program or policy (e.g., "Medicaid")</li>
+                <li><strong>Amount</strong> — the dollar figure or percentage</li>
+                <li><strong>Period</strong> — timeframe and source reference</li>
+                <li><strong>Human line</strong> — one sentence making the number real</li>
+            </ol>
+
+            <h3>Editing the Data</h3>
+            <p>Open the template in a text editor. Search for <code>'receipt-item'</code> to find each entry. Replace the placeholder text between the HTML tags with your numbers.</p>
+            <pre>&lt;div class="receipt-item-label"&gt;YOUR CATEGORY&lt;/div&gt;
+&lt;div class="receipt-item-program"&gt;YOUR PROGRAM NAME&lt;/div&gt;
+&lt;div class="receipt-item-amount"&gt;$YOUR NUMBER&lt;/div&gt;
+&lt;div class="receipt-item-period"&gt;your timeframe · your source&lt;/div&gt;
+&lt;div class="receipt-item-human"&gt;Your one-sentence human impact line.&lt;/div&gt;</pre>
+
+            <h3>Using the CSV Data Guide</h3>
+            <p>If you downloaded the CSV guide, it shows the data format used on our site. You can use it as a reference for structuring your own data before entering it into the template. The CSV is not required — it's a companion reference.</p>
+
+            <h3>Customizing Colors</h3>
+            <p>The template uses CSS custom properties. To change the brand colors, find the <code>:root</code> section near the top and update these values:</p>
+            <pre>--teal: #0091AD;     /* right-side amounts, links */
+--yellow: #FAD826;   /* left-side header */
+--fuchsia: #B22F93;  /* VS badge, accents */</pre>
+        </section>
+
+        <!-- The Villain Index -->
+        <section>
+            <h2>The Villain Index — How to Customize</h2>
+
+            <h3>Understanding the Structure</h3>
+            <p>The villain index is a clickable list. Each row represents a domain (like 'Groceries' or 'Healthcare'). Clicking a row opens a detail modal with stats, narrative, and sources.</p>
+
+            <h3>Editing the Index Rows</h3>
+            <p>Search for <code>'villain-index-row'</code> in the HTML. Each row has a domain name and a subtitle. Replace these with your own.</p>
+
+            <h3>Editing the Modal Data</h3>
+            <p>The detail content is stored in a JavaScript object called <code>villainData</code> near the bottom of the file. Each entry has:</p>
+            <ul>
+                <li><strong>domain:</strong> The category name</li>
+                <li><strong>names:</strong> The key players/companies</li>
+                <li><strong>stats:</strong> An array of {num, label} pairs</li>
+                <li><strong>narrative:</strong> The human story (HTML allowed for bold text)</li>
+                <li><strong>sources:</strong> Attribution line</li>
+            </ul>
+            <p>Example:</p>
+            <pre>groceries: {
+  domain: 'Your Domain',
+  names: 'Key Player 1 · Key Player 2',
+  stats: [
+    { num: '$XX', label: 'what this number means' },
+    { num: 'XX%', label: 'what this percentage means' }
+  ],
+  narrative: 'Your narrative connecting the data to real people...',
+  sources: 'Your sources here'
+}</pre>
+
+            <h3>Adding or Removing Rows</h3>
+            <p>To add a domain, copy an existing <code>villain-index-row</code> block and add a matching entry in <code>villainData</code>. To remove one, delete both the row HTML and its data entry.</p>
+        </section>
+
+        <!-- Embedding -->
+        <section>
+            <h2>Embedding on Your Website</h2>
+            <p>Both templates can be embedded on any website using an iframe:</p>
+            <pre>&lt;iframe src="your-receipt.html" width="100%" height="800" frameborder="0"&gt;&lt;/iframe&gt;</pre>
+            <p>Or you can host the HTML file directly. Upload it to your web server alongside any assets.</p>
+        </section>
+
+        <!-- Tips -->
+        <section>
+            <h2>Tips</h2>
+            <ul>
+                <li>Always source your numbers. Readers will check.</li>
+                <li>Keep the human impact lines to one sentence. Let the math do the work.</li>
+                <li>Test on mobile — both templates are responsive but check with your data.</li>
+                <li>If you're comfortable with CSS, you can change fonts, spacing, and layout.</li>
+            </ul>
+        </section>
+
+        <!-- Need Help -->
+        <section>
+            <h2>Need Help?</h2>
+            <p>These tools are free to use, adapt, and brand as your own. If you want help customizing for your community or issue area, reach out: <a href="mailto:action@mboldenchange.org">action@mboldenchange.org</a></p>
+        </section>
+
+        <footer>
+            <p>mBOLDen Change · <a href="https://mboldenchange.org">mboldenchange.org</a> · Free to use, adapt, and brand as your own.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Receipt — mBOLDen Change One Big Beautiful Bill</title>
+
+<!--
+  ════════════════════════════════════════════════════════════════════════════════════
+  THE RECEIPT — mBOLDen Change Plug & Play Edition
+
+  WHAT THIS IS:
+  A fully self-contained, ready-to-embed receipt showing the One Big Beautiful Bill's
+  funding priorities (left side) versus cuts (right side). All CSS is inline, all fonts
+  are from Google Fonts, no external dependencies.
+
+  CUSTOMIZATION:
+  This version is pre-loaded with the actual mBOLDen Change campaign data from July 2025.
+  For assistance or modifications, contact: action@mboldenchange.org
+
+  LICENSE:
+  Created by mBOLDen Change · mboldenchange.org
+  Feel free to adapt, share, and embed.
+  ════════════════════════════════════════════════════════════════════════════════════
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* CSS VARIABLES & RESET                                           */
+  /* ═══════════════════════════════════════════════════════════════ */
+  :root {
+    --black: #000000;
+    --white: #ffffff;
+    --bg: #F8EFE0;
+    --teal: #0091AD;
+    --fuchsia: #B22F93;
+    --yellow: #FAD826;
+    --text: #1a1a1a;
+    --muted: #777777;
+    --border: rgba(0,0,0,0.08);
+    --red: #C23B22;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* RECEIPT INTRO / HEADER                                          */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .receipt-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    padding: 80px 40px 0;
+  }
+
+  .receipt-intro h2 {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .receipt-intro p {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* RECEIPT CONTAINER & GRID LAYOUT                                 */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .receipt-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 0;
+    align-items: start;
+    padding: 60px 40px 80px;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* RECEIPT CARD STYLING (THERMAL PAPER EFFECT)                     */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .receipt {
+    background: #faf6ee;
+    position: relative;
+    overflow: visible;
+    /* thermal paper noise grain */
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.008) 2px,
+        rgba(0,0,0,0.008) 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 4px,
+        rgba(0,0,0,0.005) 4px,
+        rgba(0,0,0,0.005) 5px
+      );
+    background-color: #faf6ee;
+    /* warm edge vignette */
+    box-shadow:
+      2px 4px 20px rgba(0,0,0,0.10),
+      inset 0 0 40px rgba(180,160,120,0.06);
+  }
+
+  /* torn / jagged top edge */
+  .receipt::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background:
+      linear-gradient(135deg, #faf6ee 33.33%, transparent 33.33%) 0 0 / 12px 8px,
+      linear-gradient(225deg, #faf6ee 33.33%, transparent 33.33%) 12px 0 / 12px 8px;
+    background-repeat: repeat-x;
+    filter: drop-shadow(0 -1px 1px rgba(0,0,0,0.04));
+  }
+
+  /* torn / jagged bottom edge */
+  .receipt::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background:
+      linear-gradient(315deg, #faf6ee 33.33%, transparent 33.33%) 0 0 / 12px 8px,
+      linear-gradient(45deg, #faf6ee 33.33%, transparent 33.33%) 12px 0 / 12px 8px;
+    background-repeat: repeat-x;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.04));
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* RECEIPT HEADER (COLORED BANNERS)                                */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .receipt-header {
+    padding: 20px 28px 16px;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .receipt-left .receipt-header {
+    background: var(--yellow);
+    color: var(--black);
+  }
+
+  .receipt-right .receipt-header {
+    background: var(--teal);
+    color: var(--white);
+    justify-content: flex-end;
+  }
+
+  .receipt-header .arrow-icon {
+    font-size: 18px;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* RECEIPT ITEMS                                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .receipt-item {
+    padding: 24px 28px;
+    border-bottom: 1px dashed rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 1;
+    transform: none;
+  }
+
+  .receipt-item:last-child {
+    border-bottom: none;
+  }
+
+  .receipt-item-label {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+
+  .receipt-item-program {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+    color: var(--text);
+    text-shadow: 0.3px 0.3px 0.6px rgba(0,0,0,0.12);
+  }
+
+  .receipt-item-amount {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+    text-shadow: 0.4px 0.4px 0.8px rgba(0,0,0,0.15);
+  }
+
+  .receipt-left .receipt-item-amount {
+    color: #b89a00;
+  }
+
+  .receipt-right .receipt-item-amount {
+    color: var(--teal);
+  }
+
+  .receipt-item-period {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'Roboto', monospace;
+    margin-bottom: 8px;
+  }
+
+  .receipt-item-human {
+    font-size: 13px;
+    color: #555;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+  }
+
+  .receipt-item-human strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .receipt-right .receipt-item {
+    text-align: right;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* CENTER DIVIDER (VS CIRCLE)                                      */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .receipt-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 400px;
+  }
+
+  .receipt-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent);
+  }
+
+  .receipt-vs {
+    position: relative;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--fuchsia);
+    color: var(--white);
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.1em;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* RECEIPT TOTALS                                                   */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .receipt-total {
+    padding: 20px 28px;
+    border-top: 3px double rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.015);
+  }
+
+  .receipt-total-label {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .receipt-total-amount {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.18);
+  }
+
+  .receipt-left .receipt-total-amount {
+    color: #b89a00;
+  }
+
+  .receipt-right .receipt-total-amount {
+    color: var(--teal);
+  }
+
+  .receipt-right .receipt-total {
+    text-align: right;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* RECEIPT FOOTER (THERMAL PRINTER STYLE)                          */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .receipt-footer {
+    padding: 12px 28px 16px;
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: 9px;
+    color: rgba(0,0,0,0.22);
+    letter-spacing: 0.12em;
+    text-align: left;
+    border-top: 1px dashed rgba(0,0,0,0.08);
+  }
+
+  .receipt-right .receipt-footer {
+    text-align: right;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* TARIFF ADDENDUM (FULL WIDTH)                                    */
+  /* ═══════════════════════════════════════════════════════════════ */
+  .tariff-addendum {
+    max-width: 1000px;
+    margin: 32px auto 0;
+    background: #faf6ee;
+    border-top: 2px dashed rgba(0,0,0,0.18);
+    padding: 28px 32px;
+    position: relative;
+    text-align: center;
+    /* thermal paper noise */
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.008) 2px,
+        rgba(0,0,0,0.008) 3px
+      );
+    box-shadow: 2px 4px 20px rgba(0,0,0,0.10);
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .tariff-label {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .tariff-title {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .tariff-amount {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .tariff-detail {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .tariff-note {
+    font-size: 13px;
+    color: #555;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════ */
+  /* RESPONSIVE DESIGN                                               */
+  /* ═══════════════════════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    .receipt-container {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 40px 24px 60px;
+    }
+
+    .receipt-divider {
+      display: none;
+    }
+
+    .receipt-intro {
+      padding: 60px 24px 0;
+    }
+
+    .receipt-right .receipt-item {
+      text-align: left;
+    }
+
+    .receipt-right .receipt-header {
+      justify-content: flex-start;
+    }
+
+    .receipt-right .receipt-total {
+      text-align: left;
+    }
+
+    .receipt-right .receipt-footer {
+      text-align: left;
+    }
+
+    .tariff-addendum {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- RECEIPT INTRO / HEADLINE                                                        -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="receipt-intro">
+  <h2><em>"Show me your budget and I'll show you your values."</em></h2>
+  <p>In 2025, the Trump Administration and a GOP-led Congress passed the One Big Beautiful Bill.<br>Here's what they funded — and what they cut.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- RECEIPT CONTAINER: TWO-COLUMN GRID WITH CENTER DIVIDER                         -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="receipt-container">
+
+  <!-- ───────────────────────────────────────────────────────────── -->
+  <!-- LEFT RECEIPT: FUNDED & PROTECTED                              -->
+  <!-- ───────────────────────────────────────────────────────────── -->
+  <div class="receipt receipt-left">
+    <div class="receipt-header">
+      <span class="arrow-icon">↑</span> Funded &amp; Protected
+    </div>
+
+    <!-- ITEM 1: Department of Defense -->
+    <div class="receipt-item">
+      <div class="receipt-item-label">Department of Defense</div>
+      <div class="receipt-item-program">Pentagon Budget</div>
+      <div class="receipt-item-amount">$849.8B</div>
+      <div class="receipt-item-period">FY2025 requested · fully protected</div>
+      <div class="receipt-item-human">That's <strong>$26,902 per second</strong>, every second. Untouched.</div>
+    </div>
+
+    <!-- ITEM 2: Immigration Enforcement -->
+    <div class="receipt-item">
+      <div class="receipt-item-label">Immigration Enforcement</div>
+      <div class="receipt-item-program">ICE Operations</div>
+      <div class="receipt-item-amount">$9.3B</div>
+      <div class="receipt-item-period">FY2025 base · supplemental pushed total past $14B</div>
+      <div class="receipt-item-human"><strong>$295 per second</strong> on deportation and detention.</div>
+    </div>
+
+    <!-- ITEM 3: Estate & Corporate Tax -->
+    <div class="receipt-item">
+      <div class="receipt-item-label">Estate &amp; Corporate Tax</div>
+      <div class="receipt-item-program">2017 Tax Cuts Made Permanent</div>
+      <div class="receipt-item-amount">$15M</div>
+      <div class="receipt-item-period">estate tax exemption per person · $30M per couple</div>
+      <div class="receipt-item-human">Estates below that threshold pay <strong>nothing</strong>. The cost is on the other side of this receipt.</div>
+    </div>
+
+    <!-- ITEM 4: Tax Provisions -->
+    <div class="receipt-item">
+      <div class="receipt-item-label">Tax Provisions</div>
+      <div class="receipt-item-program">Tax Code Changes</div>
+      <div class="receipt-item-amount">+2.7%</div>
+      <div class="receipt-item-period">Income gain for top 10% by 2034 · CBO</div>
+      <div class="receipt-item-human">The bill's tax provisions deliver the largest gains to the highest earners. That's not a side effect — it's the <strong>architecture</strong>.</div>
+    </div>
+
+    <!-- TOTAL: FUNDED & PROTECTED -->
+    <div class="receipt-total">
+      <div class="receipt-total-label">Protected Total</div>
+      <div class="receipt-total-amount">$859.1B/yr</div>
+    </div>
+
+    <!-- THERMAL PRINTER FOOTER -->
+    <div class="receipt-footer">07/04/2025  14:32:07  TRANS #OBBBA-2025</div>
+  </div>
+
+  <!-- ───────────────────────────────────────────────────────────── -->
+  <!-- CENTER DIVIDER: VS CIRCLE                                     -->
+  <!-- ───────────────────────────────────────────────────────────── -->
+  <div class="receipt-divider">
+    <div class="receipt-vs">VS</div>
+  </div>
+
+  <!-- ───────────────────────────────────────────────────────────── -->
+  <!-- RIGHT RECEIPT: CUT & DEFUNDED                                 -->
+  <!-- ───────────────────────────────────────────────────────────── -->
+  <div class="receipt receipt-right">
+    <div class="receipt-header">
+      Cut &amp; Defunded <span class="arrow-icon">↓</span>
+    </div>
+
+    <!-- ITEM 1: Health Coverage / Medicaid -->
+    <div class="receipt-item">
+      <div class="receipt-item-label">Health Coverage</div>
+      <div class="receipt-item-program">Medicaid</div>
+      <div class="receipt-item-amount">−$990B</div>
+      <div class="receipt-item-period">over 10 years · CBO scored</div>
+      <div class="receipt-item-human"><strong>15 million</strong> Americans lose health coverage. That's more people than live in Pennsylvania.</div>
+    </div>
+
+    <!-- ITEM 2: Food Assistance / SNAP -->
+    <div class="receipt-item">
+      <div class="receipt-item-label">Food Assistance</div>
+      <div class="receipt-item-program">SNAP Benefits</div>
+      <div class="receipt-item-amount">−$295B</div>
+      <div class="receipt-item-period">over 10 years · CBO scored</div>
+      <div class="receipt-item-human"><strong>3.2 million</strong> lose food assistance each month. A million of them are over 55.</div>
+    </div>
+
+    <!-- ITEM 3: ACA Premium Support -->
+    <div class="receipt-item">
+      <div class="receipt-item-label">ACA Premium Support</div>
+      <div class="receipt-item-program">Enhanced Tax Credits</div>
+      <div class="receipt-item-amount">Expired</div>
+      <div class="receipt-item-period">end of 2025 · Congress failed to renew</div>
+      <div class="receipt-item-human">A family of four earning $60K could see premiums jump from <strong>$400 to $2,400/month</strong>.</div>
+    </div>
+
+    <!-- ITEM 4: Who Pays / Bottom 10% Earners -->
+    <div class="receipt-item">
+      <div class="receipt-item-label">Who Pays</div>
+      <div class="receipt-item-program">Bottom 10% of Earners</div>
+      <div class="receipt-item-amount">−3.1%</div>
+      <div class="receipt-item-period">income change by 2034 · CBO</div>
+      <div class="receipt-item-human">The people who can least afford it <strong>lose the most</strong>.</div>
+    </div>
+
+    <!-- TOTAL: CUT & DEFUNDED -->
+    <div class="receipt-total">
+      <div class="receipt-total-label">Cut Total (10yr)</div>
+      <div class="receipt-total-amount">−$1.28 Trillion</div>
+    </div>
+
+    <!-- THERMAL PRINTER FOOTER -->
+    <div class="receipt-footer">07/04/2025  14:32:07  TRANS #OBBBA-2025</div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- TARIFF ADDENDUM: FULL-WIDTH SECTION BELOW RECEIPTS                             -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div class="tariff-addendum">
+  <div class="tariff-label">PLUS — Off the Books</div>
+  <div class="tariff-title">Tariff-Driven Price Increases</div>
+  <div class="tariff-amount">+$2,600/yr</div>
+  <div class="tariff-detail">per household · Yale Budget Lab peak estimate</div>
+  <div class="tariff-note">Not in the Bill. Still on your tab.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<!-- FOOTER CREDIT                                                                   -->
+<!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+<div style="text-align: center; padding: 60px 40px; color: var(--muted); font-size: 11px; letter-spacing: 0.1em; font-weight: 300; line-height: 1.6;">
+  Data: CBO, KFF, BLS, Federal Reserve, Yale Budget Lab | A project of mBOLDen Change · <a href="https://www.mboldenchange.org/" style="color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--muted);">mboldenchange.org</a>
+</div>
+
+</body>
+</html>
